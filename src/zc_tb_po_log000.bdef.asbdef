@@ -1,0 +1,10 @@
+projection implementation in class ZCL_C_TB_PO_LOG000 unique;
+strict ( 2 );
+define behavior for ZC_TB_PO_LOG000 alias PurChaseOrderLog
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+}

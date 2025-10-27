@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TB_PO_LOG000'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TB_PO_LOG000'
+  }
+}
+define service ZAPI_TB_PO_LOG000_O4 provider contracts odata_v4_webapi {
+  expose ZC_TB_PO_LOG000 as PurChaseOrderLog;
+}

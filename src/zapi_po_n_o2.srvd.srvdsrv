@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service definition for New PO'
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_PO_N'
+  }
+}
+define service ZAPI_PO_N_O2
+  provider contracts odata_v2_webapi {
+  expose ZC_PO_N as NewPurchaseOrder;
+}

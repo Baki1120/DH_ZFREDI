@@ -1,0 +1,55 @@
+managed implementation in class zbp_r_tb_project unique;
+strict ;
+//with draft;
+define behavior for ZR_TB_PROJECT alias Project //alias <alias_name>
+persistent table ztb_project
+//draft table ztb_project_draft
+lock master //total etag LastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Uuidproject;
+  association _BudgetCate { create; }
+  association _ProjectSub { create; }
+  field ( numbering : managed ) Uuidproject;
+  field ( mandatory )
+  Projectnumber;
+  mapping for ztb_project corresponding
+    {
+      Uuidproject = uuidproject;
+      Projectname =  projectname;
+      Projectnumber = projectnumber;
+      CreatedBy              = created_by;
+      CreatedAt              = created_at;
+      LocalLastChangedBy     = local_last_changed_by;
+      LocalLastChangedAt     = local_last_changed_at;
+      LastChangedAt          = last_changed_at;
+    }
+}
+
+define behavior for ZR_TB_BUDGETCATE alias BudgetCategory
+persistent table ztb_budgetcate
+lock dependent by _project
+authorization dependent by _project
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuidbudgetcate, Uuidproject;
+  association _project;
+}
+
+define behavior for ZR_TB_PROJECT_SUB alias SubProject
+persistent table ztb_project_sub
+lock dependent by _project
+authorization dependent by _project
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuidprojectsub, Uuidproject;
+  association _project;
+}

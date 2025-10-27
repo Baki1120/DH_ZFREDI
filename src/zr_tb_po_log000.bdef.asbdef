@@ -1,0 +1,43 @@
+managed implementation in class ZCL_R_TB_PO_LOG000 unique;
+strict ( 2 );
+define behavior for ZR_TB_PO_LOG000 alias PurChaseOrderLog
+persistent table ztb_po_log
+etag master LocalLastChangedAt
+lock master
+authorization master ( global )
+
+{
+  field ( mandatory : create )
+  Purchaseorder,
+  Logtype;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( readonly : update )
+  Purchaseorder,
+  Logtype;
+
+
+  create;
+  update;
+  delete;
+
+  mapping for ztb_po_log
+    {
+      Purchaseorder      = purchaseorder;
+      Logtype            = logtype;
+      SendDate           = send_date;
+      SendTime           = send_time;
+      CpiMsg             = cpi_msg;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

@@ -1,0 +1,28 @@
+projection;
+//strict ( 2 );
+
+define behavior for ZC_TB_PROJECT alias Projects
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _BudgetCate { create; }
+  use association _ProjectSub { create; }
+}
+
+define behavior for ZC_TB_BUDGETCATE alias BudgetCategory
+{
+  use update;
+  use delete;
+
+  use association _project;
+}
+
+define behavior for ZC_TB_PROJECT_SUB alias SubProject
+{
+  use update;
+  use delete;
+
+  use association _project;
+}

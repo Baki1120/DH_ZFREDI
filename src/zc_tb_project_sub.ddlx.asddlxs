@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Sub Project Details',
+    typeNamePlural: 'List Report - Sub Project Details',
+    title: {
+        type: #STANDARD,
+        label: 'Sub Project Details',
+        value: 'Uuidprojectsub'
+    },
+    description: {
+        type: #STANDARD,
+       label: 'Sub Project Details',
+        value: 'Uuidprojectsub'
+    }
+}
+annotate view ZC_TB_PROJECT_SUB
+    with 
+{
+  @UI.facet: [ {
+  label: 'Sub Project Information Details',
+  id: 'rmititem',
+  purpose: #STANDARD,
+  position: 10 ,
+  type: #IDENTIFICATION_REFERENCE
+  } ]
+//---------------------------------------------------------------
+ @UI.identification: [ {
+   position: 10 ,
+   label: 'UUID Sub Project'
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+ // @UI.hidden: true
+  Uuidprojectsub;   
+//----------------------------------------------------------------
+
+}

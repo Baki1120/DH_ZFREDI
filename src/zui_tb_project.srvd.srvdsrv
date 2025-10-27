@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition For All'
+define service ZUI_TB_PROJECT {
+  expose ZC_TB_PROJECT;
+  expose ZC_TB_PROJECT_SUB;
+  expose ZC_TB_BUDGETCATE;
+}

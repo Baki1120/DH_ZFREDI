@@ -1,0 +1,135 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeName: 'Project(Grant) FREDI',
+    typeNamePlural: 'List Report - Projects',
+     title: {
+        type: #STANDARD,
+        label: 'Project Details',
+        value: 'Uuidproject'
+    },
+    description: {
+        type: #STANDARD,
+       label: 'Project Details',
+        value: 'Uuidproject'
+    }
+}
+annotate view ZC_TB_PROJECT
+    with 
+{
+  @EndUserText.label: 'Uuidproject'
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  }
+  ,
+  {
+  label: 'Sub Project Information',
+    id: 'subProject',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '_ProjectSub'
+  },
+  { 
+   label: 'Budget Category Information',
+    id: 'budgetCate',
+    purpose: #STANDARD,
+    position: 20 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '_BudgetCate'
+  } 
+   ]
+//------------------------------------------------------------------------
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'UUID Project'
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  @UI.hidden: true
+  Uuidproject;
+//----------------------------------------------------------------------------
+  @EndUserText.label: 'Project Number'
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  Projectnumber;
+//------------------------------------------------------------------------------
+  @EndUserText.label: 'Project Name'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  Projectname;
+ 
+  @UI.identification: [ {
+  position: 80 ,
+  label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: 'Created By'
+  } ]
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: 'Created On'
+  } ]
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: 'Changed By'
+  } ]
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Changed On'
+  } ]
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Changed On'
+  } ]
+  @UI.hidden: true
+  LastChangedAt;
+    
+}

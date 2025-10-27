@@ -1,0 +1,152 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Purchaseorder'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Purchaseorder'
+annotate view ZC_TB_PO_LOG_ITEM with
+{
+  @EndUserText.label: 'Purchaseorder'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Purchaseorder;
+  
+  @EndUserText.label: 'Purchaseorderitem'
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Purchaseorderitem;
+  
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Log type'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Log type'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Logtype;
+  
+  @EndUserText.label: 'SendDate'
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  SendDate;
+  
+  @EndUserText.label: 'SendTime'
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  SendTime;
+  
+  @EndUserText.label: 'CpiMsg'
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  CpiMsg;
+  
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Created By'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Created On'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Changed By'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  LastChangedAt;
+}

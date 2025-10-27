@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Budget Category Details',
+    typeNamePlural: 'List Report - Budget Category',
+    title: {
+        type: #STANDARD,
+        label: 'Remittance Information Details',
+        value: 'Uuidbudgetcate'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Remittance Information Details',
+        value: 'Uuidbudgetcate'
+    }
+}
+annotate view ZC_TB_BUDGETCATE
+    with 
+{
+   @UI.facet: [ {
+  label: 'Budget Categroy Information Details',
+  id: 'rmititem',
+  purpose: #STANDARD,
+  position: 10 ,
+  type: #IDENTIFICATION_REFERENCE
+  } ]
+//---------------------------------------------------------------
+ @UI.identification: [ {
+   position: 10 ,
+   label: 'UUID Budget Category'
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+ // @UI.hidden: true
+  Uuidbudgetcate;   
+//----------------------------------------------------------------
+    
+}
